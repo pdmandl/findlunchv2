@@ -1,0 +1,9 @@
+#map {
+  height: 100%;
+}
+
+// important fix for displaying the map
+ion-app._gmaps_cdv_ .nav-decor {
+  background-color: transparent !important;
+  display: none !important;
+}

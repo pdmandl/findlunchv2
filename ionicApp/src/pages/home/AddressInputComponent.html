@@ -1,0 +1,17 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons start>
+            <button ion-button (click)="viewCtrl.dismiss()">{{ 'close' | translate }}</button>
+        </ion-buttons>
+        <ion-searchbar [(ngModel)]="acQuery" [showCancelButton]="false" (ionInput)="updateSearch()"
+                       [placeholder]="'enterAdress' | translate"
+        ></ion-searchbar>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-list>
+        <ion-item *ngFor="let item of autocompleteItems" tappable (click)="chooseItem(item)">
+            {{item.description}}
+        </ion-item>
+    </ion-list>
+</ion-content>

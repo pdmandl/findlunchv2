@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ 'LoginPage.title' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+
+  <ion-list >
+      <ion-item>
+        <ion-label floating>{{ 'email' | translate }}</ion-label>
+        <ion-input #userName type="email" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>{{ 'LoginPage.password' | translate }}</ion-label>
+        <ion-input #password type="password" required></ion-input>
+      </ion-item>
+    <button ion-button full (click)="login(userName.value,password.value);">{{ 'LoginPage.login' | translate }}</button>
+    <button ion-button full (click)="goToRegisterPage();">{{ 'LoginPage.register' | translate }}</button>
+
+    <h5>{{ 'LoginPage.passwordReset' | translate }}</h5>
+    <button ion-button full color="danger" [disabled]="isEmptyUser(userName.value)" (click)="sendPasswordReset(userName.value);">{{ 'LoginPage.securityToken' | translate }}</button>
+  </ion-list>
+
+
